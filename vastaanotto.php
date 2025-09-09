@@ -2,14 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Vastaanotto</title>
-    <link rel="stylesheet" href="lomaketyyöi.css">
+    <link rel="stylesheet" href="lomaketyyli.css">
 </head>
 <body>
     <div class="kontti">
-        <h1>Viestin on vastaanotettu</h1>
 
         <?php
         if( $_SERVER["REQUEST_METHOD"]=="POST") {
+            echo "<h1>Viestin on vastaanotettu</h1>";
+
             $nimi = htmlspecialchars($_POST["nimi"]);
             $email = htmlspecialchars($_POST["email"]);
             $viesti = htmlspecialchars($_POST["viesti"]);
@@ -19,7 +20,7 @@
             echo "<p><strong>Viesti:</strong><br>" . $viesti. "</p>";
         }
         else{
-            echo "<p>Lomaketta ei ole lähetetty oikein</p>";
+            echo "<h1>Lomaketta ei ole lähetetty oikein</h1>";
         }
         ?>
     </div>
